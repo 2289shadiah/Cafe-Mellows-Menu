@@ -1,4 +1,3 @@
-html
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -29,122 +28,37 @@ html
     </script>
     <style>
         html { font-family: 'Inter', sans-serif; }
-        
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
-                        transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .reveal-delay-1 { transition-delay: 0.1s; }
-        .reveal-delay-2 { transition-delay: 0.2s; }
-        .reveal-delay-3 { transition-delay: 0.3s; }
-        
-        .card-reveal {
-            opacity: 0;
-            transform: translateY(30px) scale(0.95);
-            transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
-                        transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        .card-reveal.visible {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
-        
-        .hero-text-reveal {
-            opacity: 0;
-            transform: translateX(-40px);
-        }
-        .hero-text-reveal.visible {
-            opacity: 1;
-            transform: translateX(0);
-            transition: all 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        
-        .hero-image-reveal {
-            opacity: 0;
-            transform: scale(0.85);
-        }
-        .hero-image-reveal.visible {
-            opacity: 1;
-            transform: scale(1);
-            transition: all 1.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        
-        .nav-hidden { transform: translateY(-100%); }
-        .nav-visible { transform: translateY(0); }
-        
-        .menu-card-hidden {
-            display: none;
-        }
-        .menu-card-visible {
-            display: block;
-            animation: cardAppear 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-        }
-        
-        @keyframes cardAppear {
-            from { opacity: 0; transform: translateY(20px) scale(0.95); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
-        }
-        
-        .gradient-text {
-            background: linear-gradient(135deg, #7b2d3a, #a0405a);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .hover-lift {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .hover-lift:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-        }
-        
-        .img-zoom {
-            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        .group:hover .img-zoom {
-            transform: scale(1.08);
-        }
-        
-        .btn-hover {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .btn-hover:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(123, 45, 58, 0.3);
-        }
-        
-        .smooth-scroll {
-            scroll-behavior: smooth;
-        }
-        
-        .backdrop-blur-custom {
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
+       .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+       .reveal.visible { opacity: 1; transform: translateY(0); }
+       .card-reveal { opacity: 0; transform: translateY(30px) scale(0.95); transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+       .card-reveal.visible { opacity: 1; transform: translateY(0) scale(1); }
+       .hero-text-reveal { opacity: 0; transform: translateX(-40px); }
+       .hero-text-reveal.visible { opacity: 1; transform: translateX(0); transition: all 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+       .hero-image-reveal { opacity: 0; transform: scale(0.85); }
+       .hero-image-reveal.visible { opacity: 1; transform: scale(1); transition: all 1.1s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+        @keyframes cardAppear { from { opacity: 0; transform: translateY(20px) scale(0.95); } to { opacity: 1; transform: translateY(0) scale(1); } }
+       .img-zoom { transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+       .group:hover.img-zoom { transform: scale(1.08); }
+       .btn-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+       .btn-hover:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(123, 45, 58, 0.3); }
+       .smooth-scroll { scroll-behavior: smooth; }
+       .backdrop-blur-custom { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
     </style>
 </head>
 <body class="min-h-screen bg-mellow-cream font-sans text-mellow-brown smooth-scroll">
-    
+
     <!-- Navbar -->
     <nav id="navbar" class="fixed top-0 z-50 w-full bg-mellow-cream/80 backdrop-blur-custom border-b border-mellow-brown/10 transition-all duration-300">
         <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
             <a href="#home" class="flex items-center gap-3">
-                <img src="https://github.com/2289shadiah/Cafe-Mellows-Menu/blob/1768261d4b6960d6757750090c682a91435b6f2b/Simple%20Modern%20Opening%20Soon%20Instagram%20Post%20-%201.png" alt="Cafe Mellows Logo" class="h-10 w-auto" referrerpolicy="no-referrer">
+                <img src="https://raw.githubusercontent.com/2289shadiah/Cafe-Mellows-Menu/main/Simple%20Modern%20Opening%20Soon%20Instagram%20Post%20-%201.png" alt="Cafe Mellows Logo" class="h-10 w-auto" referrerpolicy="no-referrer">
                 <span class="text-2xl font-serif font-bold tracking-tight text-mellow-burgundy">Cafe Mellows</span>
             </a>
             <div class="hidden md:flex items-center gap-8 font-medium">
                 <a href="#home" class="hover:text-mellow-burgundy transition-colors uppercase text-[10px] tracking-widest font-bold">Home</a>
                 <a href="#menu" class="hover:text-mellow-burgundy transition-colors uppercase text-[10px] tracking-widest font-bold">Menu</a>
                 <a href="#about" class="hover:text-mellow-burgundy transition-colors uppercase text-[10px] tracking-widest font-bold">About</a>
-                <a href="#contact" class="hover:text-mellow-burgundy transition-colors uppercase text-[10px] tracking-widest font-bold border border-mellow-burgundy px-4 py-1.5 rounded-full hover:bg-mellow-burgundy hover:text-white transition-all">Contact</a>
+                <a href="#contact" class="hover:text-mellow-burgundy transition-colors uppercase text-[10px] tracking-widest font-bold border-mellow-burgundy px-4 py-1.5 rounded-full hover:bg-mellow-burgundy hover:text-white transition-all">Contact</a>
             </div>
             <button id="mobileMenuBtn" class="md:hidden text-mellow-brown" aria-label="Toggle menu">
                 <i class="ri-menu-line text-2xl" id="menuIcon"></i>
@@ -156,7 +70,7 @@ html
                 <a href="#home" class="hover:text-mellow-burgundy transition-colors uppercase text-[10px] tracking-widest font-bold" onclick="closeMobileMenu()">Home</a>
                 <a href="#menu" class="hover:text-mellow-burgundy transition-colors uppercase text-[10px] tracking-widest font-bold" onclick="closeMobileMenu()">Menu</a>
                 <a href="#about" class="hover:text-mellow-burgundy transition-colors uppercase text-[10px] tracking-widest font-bold" onclick="closeMobileMenu()">About</a>
-                <a href="#contact" class="hover:text-mellow-burgundy transition-colors uppercase text-[10px] tracking-widest font-bold border border-mellow-burgundy px-4 py-1.5 rounded-full text-center" onclick="closeMobileMenu()">Contact</a>
+                <a href="#contact" class="hover:text-mellow-burgundy transition-colors uppercase text-[10px] tracking-widest font-bold border-mellow-burgundy px-4 py-1.5 rounded-full text-center" onclick="closeMobileMenu()">Contact</a>
             </div>
         </div>
     </nav>
@@ -167,7 +81,7 @@ html
             <img src="https://image.qwenlm.ai/public_source/e62c2189-e20c-4577-a3e1-0d131c907845/11a686aec-4874-4150-9111-6daaa971f058.png" alt="Cafe Mellows Welcome" class="h-full w-full object-cover opacity-20" referrerpolicy="no-referrer">
             <div class="absolute inset-0 bg-gradient-to-b from-mellow-cream/0 via-mellow-cream/80 to-mellow-cream"></div>
         </div>
-        
+
         <div class="relative z-10 mx-auto max-w-7xl px-6 grid md:grid-cols-2 gap-12 items-center">
             <div class="hero-text-reveal">
                 <span class="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-wider text-mellow-burgundy uppercase bg-mellow-burgundy/10 rounded-full">
@@ -185,7 +99,7 @@ html
                     </a>
                 </div>
             </div>
-            
+
             <div class="relative hidden md:block hero-image-reveal">
                 <div class="relative rounded-[40px] overflow-hidden shadow-2xl border-8 border-white">
                     <img src="https://image.qwenlm.ai/public_source/e62c2189-e20c-4577-a3e1-0d131c907845/11a686aec-4874-4150-9111-6daaa971f058.png" alt="Welcome to Cafe Mellows" class="w-full aspect-[4/5] object-cover" referrerpolicy="no-referrer">
@@ -214,7 +128,7 @@ html
                 <!-- Coffee -->
                 <div class="menu-card group relative bg-mellow-cream rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow card-reveal" data-category="Drinks">
                     <div class="aspect-square w-full overflow-hidden">
-                        <img src="https://github.com/2289shadiah/Cafe-Mellows-Menu/blob/103c1a04b76b7225bb9d06f59aed9a61c199adf4/IMG_2511.png" alt="Coffee" class="h-full w-full object-cover img-zoom" referrerpolicy="no-referrer">
+                        <img src="https://raw.githubusercontent.com/2289shadiah/Cafe-Mellows-Menu/main/IMG_2511.png" alt="Coffee" class="h-full w-full object-cover img-zoom" referrerpolicy="no-referrer">
                     </div>
                     <div class="p-6">
                         <span class="text-[10px] font-bold uppercase tracking-widest text-mellow-burgundy mb-2 block">Drinks</span>
@@ -226,7 +140,7 @@ html
                 <!-- African Tea -->
                 <div class="menu-card group relative bg-mellow-cream rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow card-reveal" data-category="Drinks">
                     <div class="aspect-square w-full overflow-hidden">
-                        <img src="https://github.com/2289shadiah/Cafe-Mellows-Menu/blob/6e7572c2790b4182f0fcee0d0ed8d372c0a493c9/IMG_2409.jpeg" alt="African Tea" class="h-full w-full object-cover img-zoom" referrerpolicy="no-referrer">
+                        <img src="https://raw.githubusercontent.com/2289shadiah/Cafe-Mellows-Menu/main/IMG_2409.jpeg" alt="African Tea" class="h-full w-full object-cover img-zoom" referrerpolicy="no-referrer">
                     </div>
                     <div class="p-6">
                         <span class="text-[10px] font-bold uppercase tracking-widest text-mellow-burgundy mb-2 block">Drinks</span>
@@ -238,7 +152,7 @@ html
                 <!-- Milkshake -->
                 <div class="menu-card group relative bg-mellow-cream rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow card-reveal" data-category="Drinks">
                     <div class="aspect-square w-full overflow-hidden">
-                        <img src="https://github.com/2289shadiah/Cafe-Mellows-Menu/blob/b459d7c57499705ba289210391be6650fa57bddb/IMG_2410.jpeg" alt="Milkshake" class="h-full w-full object-cover img-zoom" referrerpolicy="no-referrer">
+                        <img src="https://raw.githubusercontent.com/2289shadiah/Cafe-Mellows-Menu/main/IMG_2410.jpeg" alt="Milkshake" class="h-full w-full object-cover img-zoom" referrerpolicy="no-referrer">
                     </div>
                     <div class="p-6">
                         <span class="text-[10px] font-bold uppercase tracking-widest text-mellow-burgundy mb-2 block">Drinks</span>
@@ -250,7 +164,7 @@ html
                 <!-- Fresh Juice -->
                 <div class="menu-card group relative bg-mellow-cream rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow card-reveal" data-category="Drinks">
                     <div class="aspect-square w-full overflow-hidden">
-                        <img src="https://github.com/2289shadiah/Cafe-Mellows-Menu/blob/82508768806017652b7227b5ee80b2b9105b1ae5/IMG_0869.jpeg" alt="Fresh Juice" class="h-full w-full object-cover img-zoom" referrerpolicy="no-referrer">
+                        <img src="https://raw.githubusercontent.com/2289shadiah/Cafe-Mellows-Menu/main/IMG_0869.jpeg" alt="Fresh Juice" class="h-full w-full object-cover img-zoom" referrerpolicy="no-referrer">
                     </div>
                     <div class="p-6">
                         <span class="text-[10px] font-bold uppercase tracking-widest text-mellow-burgundy mb-2 block">Drinks</span>
@@ -262,7 +176,7 @@ html
                 <!-- Mandazi -->
                 <div class="menu-card group relative bg-mellow-cream rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow card-reveal" data-category="Snacks">
                     <div class="aspect-square w-full overflow-hidden">
-                        <img src="https://github.com/2289shadiah/Cafe-Mellows-Menu/blob/a1fa4a0adad8bf92129d7e3ed30fd0bdb98032dd/IMG_2198.jpeg" alt="Mandazi" class="h-full w-full object-cover img-zoom" referrerpolicy="no-referrer">
+                        <img src="https://raw.githubusercontent.com/2289shadiah/Cafe-Mellows-Menu/main/IMG_2198.jpeg" alt="Mandazi" class="h-full w-full object-cover img-zoom" referrerpolicy="no-referrer">
                     </div>
                     <div class="p-6">
                         <span class="text-[10px] font-bold uppercase tracking-widest text-mellow-burgundy mb-2 block">Snacks</span>
@@ -274,7 +188,7 @@ html
                 <!-- Samosas -->
                 <div class="menu-card group relative bg-mellow-cream rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow card-reveal" data-category="Snacks">
                     <div class="aspect-square w-full overflow-hidden">
-                        <img src="https://github.com/2289shadiah/Cafe-Mellows-Menu/blob/5ba795cd3bba1a344f498f35796465622d4aae90/IMG_2415.jpeg" alt="Samosas" class="h-full w-full object-cover img-zoom" referrerpolicy="no-referrer">
+                        <img src="https://raw.githubusercontent.com/2289shadiah/Cafe-Mellows-Menu/main/IMG_2415.jpeg" alt="Samosas" class="h-full w-full object-cover img-zoom" referrerpolicy="no-referrer">
                     </div>
                     <div class="p-6">
                         <span class="text-[10px] font-bold uppercase tracking-widest text-mellow-burgundy mb-2 block">Snacks</span>
@@ -286,7 +200,7 @@ html
                 <!-- Sausages -->
                 <div class="menu-card group relative bg-mellow-cream rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow card-reveal" data-category="Snacks">
                     <div class="aspect-square w-full overflow-hidden">
-                        <img src="https://github.com/2289shadiah/Cafe-Mellows-Menu/blob/89d489839a05cf4cbf6a6b895b78e723fc918363/IMG_2513.jpeg" alt="Sausages" class="h-full w-full object-cover img-zoom" referrerpolicy="no-referrer">
+                        <img src="https://raw.githubusercontent.com/2289shadiah/Cafe-Mellows-Menu/main/IMG_2513.jpeg" alt="Sausages" class="h-full w-full object-cover img-zoom" referrerpolicy="no-referrer">
                     </div>
                     <div class="p-6">
                         <span class="text-[10px] font-bold uppercase tracking-widest text-mellow-burgundy mb-2 block">Snacks</span>
@@ -298,7 +212,7 @@ html
                 <!-- Chapati -->
                 <div class="menu-card group relative bg-mellow-cream rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow card-reveal" data-category="Snacks">
                     <div class="aspect-square w-full overflow-hidden">
-                        <img src="https://github.com/2289shadiah/Cafe-Mellows-Menu/blob/3ed79376a07993767ceccc9ca3033ed76c4ec896/IMG_2200.jpeg" alt="Chapati" class="h-full w-full object-cover img-zoom" referrerpolicy="no-referrer">
+                        <img src="https://raw.githubusercontent.com/2289shadiah/Cafe-Mellows-Menu/main/IMG_2200.jpeg" alt="Chapati" class="h-full w-full object-cover img-zoom" referrerpolicy="no-referrer">
                     </div>
                     <div class="p-6">
                         <span class="text-[10px] font-bold uppercase tracking-widest text-mellow-burgundy mb-2 block">Snacks</span>
@@ -310,7 +224,7 @@ html
                 <!-- Doughnuts -->
                 <div class="menu-card group relative bg-mellow-cream rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow card-reveal" data-category="Snacks">
                     <div class="aspect-square w-full overflow-hidden">
-                        <img src="https://github.com/2289shadiah/Cafe-Mellows-Menu/blob/c5e47b17364767c56f64fca7f8b11129206f7e4a/IMG_2199.jpeg" alt="Doughnuts" class="h-full w-full object-cover img-zoom" referrerpolicy="no-referrer">
+                        <img src="https://raw.githubusercontent.com/2289shadiah/Cafe-Mellows-Menu/main/IMG_2199.jpeg" alt="Doughnuts" class="h-full w-full object-cover img-zoom" referrerpolicy="no-referrer">
                     </div>
                     <div class="p-6">
                         <span class="text-[10px] font-bold uppercase tracking-widest text-mellow-burgundy mb-2 block">Snacks</span>
@@ -322,7 +236,7 @@ html
                 <!-- Pancakes -->
                 <div class="menu-card group relative bg-mellow-cream rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow card-reveal" data-category="Snacks">
                     <div class="aspect-square w-full overflow-hidden">
-                        <img src="https://github.com/2289shadiah/Cafe-Mellows-Menu/blob/9aa4e0cd99fa4e3cb8ab190cb846f71261bf9622/IMG_2414.jpeg" alt="Pancakes" class="h-full w-full object-cover img-zoom" referrerpolicy="no-referrer">
+                        <img src="https://raw.githubusercontent.com/2289shadiah/Cafe-Mellows-Menu/main/IMG_2414.jpeg" alt="Pancakes" class="h-full w-full object-cover img-zoom" referrerpolicy="no-referrer">
                     </div>
                     <div class="p-6">
                         <span class="text-[10px] font-bold uppercase tracking-widest text-mellow-burgundy mb-2 block">Snacks</span>
@@ -334,7 +248,7 @@ html
                 <!-- Bread -->
                 <div class="menu-card group relative bg-mellow-cream rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow card-reveal" data-category="Snacks">
                     <div class="aspect-square w-full overflow-hidden">
-                        <img src="https://github.com/2289shadiah/Cafe-Mellows-Menu/blob/cc806ea78b311eb3e56968518cdedd2c7de1e197/IMG_2514.jpeg" alt="Bread" class="h-full w-full object-cover img-zoom" referrerpolicy="no-referrer">
+                        <img src="https://raw.githubusercontent.com/2289shadiah/Cafe-Mellows-Menu/main/IMG_2514.jpeg" alt="Bread" class="h-full w-full object-cover img-zoom" referrerpolicy="no-referrer">
                     </div>
                     <div class="p-6">
                         <span class="text-[10px] font-bold uppercase tracking-widest text-mellow-burgundy mb-2 block">Snacks</span>
@@ -346,7 +260,7 @@ html
                 <!-- Popcorn -->
                 <div class="menu-card group relative bg-mellow-cream rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow card-reveal" data-category="Snacks">
                     <div class="aspect-square w-full overflow-hidden">
-                        <img src="https://github.com/2289shadiah/Cafe-Mellows-Menu/blob/cc5f55811f69f2f7d4fda40cc9a628405c26b45e/IMG_2516.jpeg" alt="Popcorn" class="h-full w-full object-cover img-zoom" referrerpolicy="no-referrer">
+                        <img src="https://raw.githubusercontent.com/2289shadiah/Cafe-Mellows-Menu/main/IMG_2516.jpeg" alt="Popcorn" class="h-full w-full object-cover img-zoom" referrerpolicy="no-referrer">
                     </div>
                     <div class="p-6">
                         <span class="text-[10px] font-bold uppercase tracking-widest text-mellow-burgundy mb-2 block">Snacks</span>
@@ -358,7 +272,7 @@ html
                 <!-- Fries -->
                 <div class="menu-card group relative bg-mellow-cream rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow card-reveal" data-category="Snacks">
                     <div class="aspect-square w-full overflow-hidden">
-                        <img src="https://github.com/2289shadiah/Cafe-Mellows-Menu/blob/87674c03545fe3827efb1f0411320a8cab0f0694/IMG_2515.jpeg" alt="Fries" class="h-full w-full object-cover img-zoom" referrerpolicy="no-referrer">
+                        <img src="https://raw.githubusercontent.com/2289shadiah/Cafe-Mellows-Menu/main/IMG_2515.jpeg" alt="Fries" class="h-full w-full object-cover img-zoom" referrerpolicy="no-referrer">
                     </div>
                     <div class="p-6">
                         <span class="text-[10px] font-bold uppercase tracking-widest text-mellow-burgundy mb-2 block">Snacks</span>
@@ -367,10 +281,10 @@ html
                     </div>
                 </div>
 
-                <!-- Katogo - UPDATED IMAGE -->
+                <!-- Katogo -->
                 <div class="menu-card group relative bg-mellow-cream rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow card-reveal" data-category="Meals">
                     <div class="aspect-square w-full overflow-hidden">
-                        <img src="https://github.com/2289shadiah/Cafe-Mellows-Menu/blob/4c16dfcfd416403fc1ef09c9a6137d548ad7077a/IMG_2411.jpeg" alt="Katogo" class="h-full w-full object-cover img-zoom" referrerpolicy="no-referrer">
+                        <img src="https://raw.githubusercontent.com/2289shadiah/Cafe-Mellows-Menu/main/IMG_2411.jpeg" alt="Katogo" class="h-full w-full object-cover img-zoom" referrerpolicy="no-referrer">
                     </div>
                     <div class="p-6">
                         <span class="text-[10px] font-bold uppercase tracking-widest text-mellow-burgundy mb-2 block">Meals</span>
@@ -382,7 +296,7 @@ html
                 <!-- Rolex -->
                 <div class="menu-card group relative bg-mellow-cream rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow card-reveal" data-category="Meals">
                     <div class="aspect-square w-full overflow-hidden">
-                        <img src="https://github.com/2289shadiah/Cafe-Mellows-Menu/blob/f6df44b083ab938f31ba463bcdd61240932f307e/IMG_2512.jpeg" alt="Rolex" class="h-full w-full object-cover img-zoom" referrerpolicy="no-referrer">
+                        <img src="https://raw.githubusercontent.com/2289shadiah/Cafe-Mellows-Menu/main/IMG_2512.jpeg" alt="Rolex" class="h-full w-full object-cover img-zoom" referrerpolicy="no-referrer">
                     </div>
                     <div class="p-6">
                         <span class="text-[10px] font-bold uppercase tracking-widest text-mellow-burgundy mb-2 block">Meals</span>
@@ -394,7 +308,7 @@ html
                 <!-- Pilau -->
                 <div class="menu-card group relative bg-mellow-cream rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow card-reveal" data-category="Meals">
                     <div class="aspect-square w-full overflow-hidden">
-                        <img src="https://github.com/2289shadiah/Cafe-Mellows-Menu/blob/2526f47d891792190b6c27d0934271fe9a5ae914/IMG_2517.jpeg" alt="Pilau" class="h-full w-full object-cover img-zoom" referrerpolicy="no-referrer">
+                        <img src="https://raw.githubusercontent.com/2289shadiah/Cafe-Mellows-Menu/main/IMG_2517.jpeg" alt="Pilau" class="h-full w-full object-cover img-zoom" referrerpolicy="no-referrer">
                     </div>
                     <div class="p-6">
                         <span class="text-[10px] font-bold uppercase tracking-widest text-mellow-burgundy mb-2 block">Meals</span>
@@ -406,7 +320,7 @@ html
         </div>
     </section>
 
-    <!-- Info/Story Section -->
+    <!-- About Section -->
     <section id="about" class="py-32 bg-white">
         <div class="mx-auto max-w-7xl px-6 grid md:grid-cols-2 gap-24 items-center">
             <div class="relative reveal">
@@ -431,7 +345,7 @@ html
                 </div>
                 <div class="absolute -bottom-10 -right-10 w-full h-full border-2 border-mellow-burgundy/10 rounded-tr-[120px] rounded-bl-[120px] -z-0"></div>
             </div>
-            <div class="reveal reveal-delay-2">
+            <div class="reveal">
                 <span class="uppercase text-[10px] tracking-[0.4em] font-bold text-mellow-burgundy mb-6 block">Our Essence</span>
                 <h2 class="text-7xl font-serif leading-[0.9] mb-10">Artisanal Spirits, <br />Global Standards</h2>
                 <p class="text-xl leading-relaxed text-mellow-brown/70 font-serif max-w-lg mb-8">
@@ -457,7 +371,7 @@ html
                     </div>
                     <div class="flex items-center gap-4">
                         <i class="ri-mail-line text-xl opacity-40"></i>
-                        <span class="text-lg underline underline-offset-4 decoration-mellow-burgundy">cafemellows24@gmail.com</span>
+                        <span class="text-lg underline-offset-4 decoration-mellow-burgundy">cafemellows24@gmail.com</span>
                     </div>
                     <div class="flex items-center gap-4">
                         <i class="ri-map-pin-line text-xl opacity-40"></i>
@@ -474,13 +388,13 @@ html
 
     <!-- Footer -->
     <footer class="py-16 bg-mellow-dark text-[#7c6a5e] border-t border-white/5">
-        <div class="mx-auto max-w-7xl px-6 flex flex-col md:flex-row items-center justify-between gap-12">
+        <div class="mx-auto max-w-7xl px-6 flex-col md:flex-row items-center justify-between gap-12">
             <div class="flex items-center gap-4">
                  <img src="https://image.qwenlm.ai/public_source/e62c2189-e20c-4577-a3e1-0d131c907845/15dfe323a-8744-44a8-9669-3a545be38479.png" alt="Logo" class="h-8 w-auto opacity-80" referrerpolicy="no-referrer">
                 <span class="font-serif font-bold text-white text-2xl tracking-tighter italic">Mellows</span>
             </div>
             <div class="text-center">
-                <p class="text-[10px] uppercase tracking-[0.3em] font-bold mb-2 text-white/40">Since Twenty Twenty Four</p>
+                <p class="text-[10px] uppercase tracking-[0.3em] font-bold mb-2 text-white/40">Since Twenty Four</p>
                 <p class="text-sm italic font-serif">Authentic. Local. Mellow.</p>
             </div>
             <div class="flex gap-10 text-[10px] font-bold uppercase tracking-[0.2em]">
@@ -498,16 +412,14 @@ html
         filterButtons.forEach(button => {
             button.addEventListener('click', () => {
                 const category = button.getAttribute('data-category');
-                
-                // Update active button
+
                 filterButtons.forEach(btn => {
                     btn.classList.remove('bg-mellow-burgundy', 'text-white', 'border-mellow-burgundy');
                     btn.classList.add('bg-transparent', 'text-mellow-brown', 'border-mellow-brown/20');
                 });
                 button.classList.remove('bg-transparent', 'text-mellow-brown', 'border-mellow-brown/20');
                 button.classList.add('bg-mellow-burgundy', 'text-white', 'border-mellow-burgundy');
-                
-                // Filter cards
+
                 menuCards.forEach((card, index) => {
                     const cardCategory = card.getAttribute('data-category');
                     if (category === 'All' || cardCategory === category) {
@@ -527,89 +439,13 @@ html
         let menuOpen = false;
 
         mobileMenuBtn.addEventListener('click', () => {
-            menuOpen = !menuOpen;
+            menuOpen =!menuOpen;
             mobileMenu.classList.toggle('hidden');
-            if (menuOpen) {
-                menuIcon.classList.remove('ri-menu-line');
-                menuIcon.classList.add('ri-close-line');
-            } else {
-                menuIcon.classList.remove('ri-close-line');
-                menuIcon.classList.add('ri-menu-line');
-            }
+            menuIcon.classList.toggle('ri-menu-line');
+            menuIcon.classList.toggle('ri-close-line');
         });
 
         function closeMobileMenu() {
             menuOpen = false;
             mobileMenu.classList.add('hidden');
-            menuIcon.classList.remove('ri-close-line');
-            menuIcon.classList.add('ri-menu-line');
-        }
-
-        // Scroll reveal
-        const revealElements = document.querySelectorAll('.reveal, .hero-text-reveal, .hero-image-reveal');
-        
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.15,
-            rootMargin: '0px 0px -50px 0px'
-        });
-
-        revealElements.forEach(el => revealObserver.observe(el));
-
-        // Card reveal on scroll
-        const cardElements = document.querySelectorAll('.card-reveal');
-        
-        const cardObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.classList.add('visible');
-                    }, index * 80);
-                }
-            });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -30px 0px'
-        });
-
-        cardElements.forEach(el => cardObserver.observe(el));
-
-        // Navbar background on scroll
-        const navbar = document.getElementById('navbar');
-        let lastScroll = 0;
-
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            if (currentScroll > 50) {
-                navbar.classList.add('shadow-sm');
-            } else {
-                navbar.classList.remove('shadow-sm');
-            }
-            lastScroll = currentScroll;
-        });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const offset = 80;
-                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
-</body>
-</html>
-```
-
+            menu
