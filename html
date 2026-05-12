@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MellowsCafé | Premium Coffee & Vibes</title>
+    <!-- Google Fonts for Beautiful Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #3e2723; /* Dark Espresso */
+            --accent: #d7ccc8;  /* Cream */
+            --gold: #bcaaa4;    /* Soft Brown/Gold */
+            --white: #ffffff;
+            --bg: #fdfbf7;      /* Warm White */
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Lato', sans-serif; background-color: var(--bg); color: var(--primary); line-height: 1.6; }
+        
+        /* Typography */
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        
+        /* Navigation */
+        nav { background: var(--primary); padding: 15px 20px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; }
+        nav a { color: var(--accent); text-decoration: none; margin: 0 15px; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; }
+        nav a:hover { color: var(--white); }
+
+        /* Hero Section */
+        header.hero {
+            background: linear-gradient(rgba(62, 39, 35, 0.8), rgba(62, 39, 35, 0.8)), url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+            padding: 100px 20px;
+        }
+        header h1 { font-size: 3.5rem; margin-bottom: 10px; letter-spacing: 2px; }
+        header p { font-size: 1.2rem; font-style: italic; opacity: 0.9; }
+        .divider { width: 60px; height: 3px; background: var(--accent); margin: 20px auto; }
+
+        /* Sections */
+        section { padding: 60px 20px; max-width: 800px; margin: 0 auto; text-align: center; }
+        .section-title { font-size: 2.5rem; margin-bottom: 40px; position: relative; display: inline-block; }
+        .section-title::after { content: ''; display: block; width: 40px; height: 2px; background: var(--gold); margin: 10px auto 0; }
+
+        /* Menu Grid */
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; text-align: left; }
+        .menu-cat { background: var(--white); padding: 30px; border-radius: 8px; box-shadow: 0 5px 15px rgba(62, 39, 35, 0.05); border-top: 3px solid var(--gold); }
+        .menu-cat h3 { color: var(--primary); font-size: 1.5rem; margin-bottom: 20px; border-bottom: 1px solid var(--accent); padding-bottom: 10px; }
+        .item { margin-bottom: 15px; }
+        .item-name { font-weight: 700; font-size: 1.1rem; display: block; margin-bottom: 3px; }
+        .item-desc { font-size: 0.9rem; color: #666; font-style: italic; }
+
+        /* About & Info */
+        .info-box { background: var(--primary); color: var(--accent); padding: 40px; border-radius: 8px; margin-top: 20px; }
+        .info-box h3 { color: var(--white); margin-bottom: 15px; }
+        
+        /* Contact */
+        .contact-details p { margin: 10px 0; font-size: 1.1rem; }
+        .btn { display: inline-block; margin-top: 20px; padding: 12px 30px; background: var(--gold); color: var(--primary); text-decoration: none; font-weight: 700; border-radius: 50px; transition: background 0.3s; }
+        .btn:hover { background: var(--white); }
+
+        footer { background: var(--primary); color: var(--accent); text-align: center; padding: 30px; margin-top: 40px; font-size: 0.9rem; }
+        
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            header h1 { font-size: 2.5rem; }
+            nav a { margin: 0 8px; font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="#menu">Menu</a>
+    <a href="#about">About</a>
+    <a href="#info">Visit Us</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<header class="hero">
+    <h1>MellowsCafé</h1>
+    <div class="divider"></div>
+    <p>Est. 2024 | Taste the Comfort</p>
+</header>
+
+<section id="menu">
+    <h2 class="section-title">Our Menu</h2>
+    <div class="menu-grid">
+        <!-- Hot Drinks -->
+        <div class="menu-cat">
+            <h3>☕ Hot Coffee</h3>
+            <div class="item"><span class="item-name">Espresso</span><span class="item-desc">Rich, bold single shot</span></div>
+            <div class="item"><span class="item-name">Cappuccino</span><span class="item-desc">Espresso with steamed milk foam</span></div>
+            <div class="item"><span class="item-name">Latte</span><span class="item-desc">Smooth espresso with creamy milk</span></div>
+            <div class="item"><span class="item-name">Mocha</span><span class="item-desc">Chocolate meets coffee</span></div>
+        </div>
+
+        <!-- Cold Drinks -->
+        <div class="menu-cat">
+            <h3>🧊 Cold Brews</h3>
+            <div class="item"><span class="item-name">Iced Coffee</span><span class="item-desc">Chilled brewed perfection</span></div>
+            <div class="item"><span class="item-name">Iced Latte</span><span class="item-desc">Creamy and cool</span></div>
+            <div class="item"><span class="item-name">Fresh Juices</span><span class="item-desc">Orange, Mango, Mixed</span></div>
+            <div class="item"><span class="item-name">Lemonade</span><span class="item-desc">House-squeezed daily</span></div>
+        </div>
+
+        <!-- Pastries -->
+        <div class="menu-cat">
+            <h3>🥐 Bakery</h3>
+            <div class="item"><span class="item-name">Butter Croissant</span><span class="item-desc">Flaky and golden</span></div>
+            <div class="item"><span class="item-name">Chocolate Muffin</span><span class="item-desc">Baked fresh every morning</span></div>
+            <div class="item"><span class="item-name">Cinnamon Roll</span><span class="item-desc">Warm with cream cheese glaze</span></div>
+        </div>
+
+        <!-- Food -->
+        <div class="menu-cat">
+            <h3>🥪 Light Bites</h3>
+            <div class="item"><span class="item-name">Club Sandwich</span><span class="item-desc">Chicken, bacon, lettuce, tomato</span></div>
+            <div class="item"><span class="item-name">Avocado Toast</span><span class="item-desc">Sourdough with fresh avocado</span></div>
+            <div class="item"><span class="item-name">Caesar Salad</span><span class="item-desc">Crisp romaine with parmesan</span></div>
+        </div>
+    </div>
+</section>
+
+<section id="about">
+    <h2 class="section-title">Our Story</h2>
+    <p style="font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
+        Welcome to <strong>MellowsCafé</strong>, established in 2024. We created a space where quality coffee meets a cozy atmosphere. 
+        Whether you need a quiet corner to work or a place to catch up with friends, we serve every cup with passion and love.
+    </p>
+</section>
+
+<section id="info">
+    <h2 class="section-title">Visit Us</h2>
+    <div class="info-box">
+        <h3>🕒 Opening Hours</h3>
+        <p>Monday - Sunday</p>
+        <p style="font-size: 1.5rem; font-weight: bold; margin: 10px 0;">6:00 AM - 12:00 AM</p>
+        <p style="font-size: 0.9rem; opacity: 0.8;">Happy Hour: 3 PM - 5 PM</p>
+    </div>
+</section>
+
+<section id="contact">
+    <h2 class="section-title">Get in Touch</h2>
+    <div class="contact-details">
+        <p><strong>📞 Phone:</strong> 0743234431</p>
+        <p><strong>📧 Email:</strong> Cafemellows24@gmail.com</p>
+    </div>
+    <a href="tel:0743234431" class="btn">Call to Reserve</a>
+</section>
+
+<footer>
+    <p>&copy; 2024 MellowsCafé. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
