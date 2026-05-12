@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MellowsCafé - Est. 2024</title>
+    <style>
+        body { font-family: sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
+        header { background: #4a2c2a; color: white; padding: 30px 20px; text-align: center; }
+        h1 { margin: 0; font-size: 2.5em; }
+        .tagline { font-style: italic; opacity: 0.9; }
+        nav { background: #333; padding: 10px; text-align: center; position: sticky; top: 0; z-index: 100; }
+        nav a { color: white; text-decoration: none; margin: 0 10px; font-weight: bold; }
+        section { background: white; padding: 20px; margin: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        h2 { color: #4a2c2a; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        .menu-cat { margin-bottom: 20px; }
+        .menu-cat h3 { color: #666; font-size: 1.2em; margin-bottom: 10px; }
+        .item { margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px dashed #ddd; }
+        .item:last-child { border-bottom: none; }
+        .item-name { font-weight: bold; display: block; }
+        .item-desc { color: #777; font-size: 0.9em; font-style: italic; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; }
+        .box { background: #eee; padding: 15px; border-radius: 5px; text-align: center; }
+        .contact-info { text-align: center; background: #4a2c2a; color: white; padding: 20px; border-radius: 8px; }
+        footer { text-align: center; padding: 20px; color: #777; font-size: 0.8em; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>MellowsCafé</h1>
+    <p class="tagline">Est. 2024 - Taste the Comfort</p>
+</header>
+
+<nav>
+    <a href="#menu">Menu</a>
+    <a href="#about">About</a>
+    <a href="#hours">Hours</a>
+    <a href="#amenities">Amenities</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+    <h2>About Us</h2>
+    <p>Welcome to <strong>MellowsCafé</strong>! Established in 2024, we are dedicated to serving high-quality coffee and delicious food in a warm, cozy environment. Whether you're here for a quick break or a long work session, we've got you covered.</p>
+</section>
+
+<section id="menu">
+    <h2>Our Menu</h2>
+    
+    <div class="menu-cat">
+        <h3>☕ Hot Coffee</h3>
+        <div class="item"><span class="item-name">Espresso</span><span class="item-desc">Rich, strong, pure coffee</span></div>
+        <div class="item"><span class="item-name">Cappuccino</span><span class="item-desc">Espresso with steamed milk foam</span></div>
+        <div class="item"><span class="item-name">Latte</span><span class="item-desc">Smooth espresso with creamy milk</span></div>
+        <div class="item"><span class="item-name">Mocha</span><span class="item-desc">Chocolate and espresso blend</span></div>
+    </div>
+
+    <div class="menu-cat">
+        <h3>🧊 Cold Drinks</h3>
+        <div class="item"><span class="item-name">Iced Coffee</span><span class="item-desc">Chilled brewed coffee</span></div>
+        <div class="item"><span class="item-name">Iced Latte</span><span class="item-desc">Cold milk and espresso</span></div>
+        <div class="item"><span class="item-name">Fresh Smoothies</span><span class="item-desc">Tropical, Berry, or Green</span></div>
+        <div class="item"><span class="item-name">Lemonade</span><span class="item-desc">Freshly squeezed daily</span></div>
+    </div>
+
+    <div class="menu-cat">
+        <h3>🥐 Pastries</h3>
+        <div class="item"><span class="item-name">Butter Croissant</span><span class="item-desc">Flaky and buttery</span></div>
+        <div class="item"><span class="item-name">Chocolate Muffin</span><span class="item-desc">Baked fresh daily</span></div>
+        <div class="item"><span class="item-name">Cinnamon Roll</span><span class="item-desc">Sweet glaze and cinnamon</span></div>
+    </div>
+
+    <div class="menu-cat">
+        <h3>🥪 Light Meals</h3>
+        <div class="item"><span class="item-name">Club Sandwich</span><span class="item-desc">Chicken, bacon, lettuce, tomato</span></div>
+        <div class="item"><span class="item-name">Avocado Toast</span><span class="item-desc">Sourdough bread and fresh avocado</span></div>
+        <div class="item"><span class="item-name">Caesar Salad</span><span class="item-desc">Crisp romaine with parmesan</span></div>
+    </div>
+</section>
+
+<section id="hours">
+    <h2>Opening Hours</h2>
+    <div class="grid">
+        <div class="box"><strong>Daily</strong><br>6 AM - 12 AM</div>
+        <div class="box"><strong>Happy Hour</strong><br>3 PM - 5 PM</div>
+    </div>
+</section>
+
+<section id="amenities">
+    <h2>Amenities</h2>
+    <div class="grid">
+        <div class="box">📶 Free WiFi</div>
+        <div class="box">🔌 Power Outlets</div>
+        <div class="box">♿ Accessible</div>
+        <div class="box">🐕 Pet Friendly</div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-info">
+        <p><strong>Phone:</strong> 0743234431</p>
+        <p><strong>Email:</strong> Cafemellows24@gmail.com</p>
+        <p><strong>Location:</strong> Visit us today!</p>
+    </div>
+</section>
+
+<footer>
+    &copy; 2024 MellowsCafé. All Rights Reserved.
+</footer>
+
+</body>
+</html>
