@@ -1,0 +1,262 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+import { motion } from "motion/react";
+import { 
+  Coffee, 
+  Phone, 
+  MapPin, 
+  Mail, 
+  Clock, 
+  ChevronRight, 
+  Instagram,
+  Facebook
+} from "lucide-react";
+import { useState } from "react";
+
+const MENU_ITEMS = [
+  { name: "Coffee", image: "input_file_0.png", description: "Freshly brewed premium highland beans, served hot or iced.", category: "Drinks" },
+  { name: "African Tea", image: "input_file_1.png", description: "Traditional Ugandan spiced milk tea with ginger and cinnamon.", category: "Drinks" },
+  { name: "Milkshake", image: "input_file_2.png", description: "Creamy, thick blends available in vanilla, chocolate, and strawberry.", category: "Drinks" },
+  { name: "Mandazi", image: "input_file_3.png", description: "Soft, slightly sweet deep-fried dough balls, perfect with tea.", category: "Snacks" },
+  { name: "Samosas", image: "input_file_4.png", description: "Crispy triangular pastries filled with savory spiced meat or vegetables.", category: "Snacks" },
+  { name: "Sausages", image: "input_file_5.png", description: "Premium grilled sausages, juicy and bursting with flavor.", category: "Snacks" },
+  { name: "Katogo (Signature)", image: "input_file_6.png", description: "Our famous hearty breakfast served with your choice of Beef, Chicken, or G-nuts.", category: "Meals" },
+  { name: "Chapati", image: "input_file_7.png", description: "Soft, layered, and flaky handmade flatbread.", category: "Snacks" },
+  { name: "Doughnuts", image: "input_file_8.png", description: "Sweet, glazed rings baked fresh every morning.", category: "Snacks" },
+  { name: "Pancakes", image: "input_file_9.png", description: "Traditional sweet banana pancakes, locally known as Kabalagala.", category: "Snacks" },
+  { name: "Rolex", image: "input_file_10.png", description: "The iconic Ugandan street food: rolled eggs and veggies in a fresh chapati.", category: "Meals" },
+  { name: "Bread", image: "input_file_11.png", description: "Freshly baked artisan loaves, soft on the inside and crusty outside.", category: "Snacks" },
+  { name: "Popcorn", image: "input_file_12.png", description: "Light, airy, and perfectly salted for a quick crunch.", category: "Snacks" },
+  { name: "Pilau", image: "input_file_13.png", description: "Richly spiced aromatic rice cooked with tender pieces of meat.", category: "Meals" },
+  { name: "Fresh Juice", image: "input_file_14.png", description: "Healthy, cold-pressed seasonal fruits with no added sugar.", category: "Drinks" },
+  { name: "Fries", image: "input_file_15.png", description: "Crispy golden potato fingers, seasoned to perfection.", category: "Snacks" },
+];
+
+const CATEGORIES = ["All", "Drinks", "Snacks", "Meals"];
+
+export default function App() {
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  const filteredMenu = activeCategory === "All" 
+    ? MENU_ITEMS 
+    : MENU_ITEMS.filter(item => item.category === activeCategory);
+
+  return (
+    <div className="min-h-screen bg-mellow-cream font-sans text-mellow-brown">
+      {/* Navbar */}
+      <nav className="fixed top-0 z-50 w-full bg-mellow-cream/80 backdrop-blur-md border-b border-mellow-brown/10">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+          <div className="flex items-center gap-3">
+            <img 
+              src="input_file_16.png" 
+              alt="Cafe Mellows Logo" 
+              className="h-10 w-auto"
+              referrerPolicy="no-referrer"
+            />
+            <span className="text-2xl font-serif font-bold tracking-tight text-mellow-burgundy">Cafe Mellows</span>
+          </div>
+          <div className="hidden md:flex items-center gap-8 font-medium">
+            <a href="#home" className="hover:text-mellow-burgundy transition-colors uppercase text-[10px] tracking-widest font-bold">Home</a>
+            <a href="#menu" className="hover:text-mellow-burgundy transition-colors uppercase text-[10px] tracking-widest font-bold">Menu</a>
+            <a href="#about" className="hover:text-mellow-burgundy transition-colors uppercase text-[10px] tracking-widest font-bold">About</a>
+            <a href="#contact" className="hover:text-mellow-burgundy transition-colors uppercase text-[10px] tracking-widest font-bold border border-mellow-burgundy px-4 py-1.5 rounded-full">Contact</a>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section id="home" className="relative pt-24 min-h-screen flex items-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="input_file_17.png" 
+            alt="Cafe Mellows Welcome" 
+            className="h-full w-full object-cover opacity-20"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-mellow-cream/0 via-mellow-cream/80 to-mellow-cream"></div>
+        </div>
+        
+        <div className="relative z-10 mx-auto max-w-7xl px-6 grid md:grid-cols-2 gap-12 items-center">
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <span className="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-wider text-mellow-burgundy uppercase bg-mellow-burgundy/10 rounded-full">
+              Wandegeya • Haji Musa Kasule Mall
+            </span>
+            <h1 className="text-5xl md:text-8xl font-serif leading-[0.9] mb-8 tracking-tighter">
+              Tell your story <br /> <span className="italic font-normal">with taste</span>
+            </h1>
+            <p className="text-xl text-mellow-brown/70 mb-10 max-w-lg leading-relaxed font-serif">
+              Experience the soul of Wandegeya at Hajji Musa Kasule Mall. Authenticity in every bite, warmth in every cup.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <a href="#menu" className="px-8 py-4 bg-mellow-burgundy text-white rounded-xl font-bold shadow-lg shadow-mellow-burgundy/20 hover:-translate-y-1 transition-transform flex items-center gap-2 uppercase text-xs tracking-widest">
+                Explore Menu <ChevronRight className="w-5 h-5" />
+              </a>
+            </div>
+          </motion.div>
+          
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="relative hidden md:block"
+          >
+            <div className="relative rounded-[40px] overflow-hidden shadow-2xl border-8 border-white">
+              <img 
+                src="input_file_17.png" 
+                alt="Welcome to Cafe Mellows" 
+                className="w-full aspect-[4/5] object-cover"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Menu Section */}
+      <section id="menu" className="py-32 bg-white">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-8">
+            <div className="max-w-md">
+              <span className="uppercase text-[10px] tracking-[0.3em] font-bold text-mellow-burgundy/60 mb-3 block">Boutique Selection</span>
+              <h2 className="text-6xl font-serif leading-[0.9]">Curated Flavors</h2>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {CATEGORIES.map(cat => (
+                <button
+                  key={cat}
+                  onClick={() => setActiveCategory(cat)}
+                  className={`px-6 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all border ${
+                    activeCategory === cat 
+                    ? "bg-mellow-burgundy text-white border-mellow-burgundy" 
+                    : "bg-transparent text-mellow-brown border-mellow-brown/20 hover:border-mellow-burgundy hover:text-mellow-burgundy"
+                  }`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {filteredMenu.map((item, index) => (
+              <motion.div
+                layout
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+                key={item.name}
+                className="group relative bg-mellow-cream rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow"
+              >
+                <div className="aspect-square w-full overflow-hidden">
+                  <img 
+                    src={item.image} 
+                    alt={item.name} 
+                    className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+                <div className="p-6">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-mellow-burgundy mb-2 block">{item.category}</span>
+                  <h3 className="text-xl font-bold font-serif mb-2">{item.name}</h3>
+                  <p className="text-mellow-brown/60 text-sm leading-relaxed italic font-serif">{item.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Info/Story Section */}
+      <section id="about" className="py-32 bg-white">
+        <div className="mx-auto max-w-7xl px-6 grid md:grid-cols-2 gap-24 items-center">
+          <div className="relative">
+            <div className="bg-mellow-burgundy text-white p-16 rounded-tr-[120px] rounded-bl-[120px] shadow-2xl relative z-10">
+              <h3 className="text-5xl font-serif italic mb-10 leading-tight">"Where every meal meets a mellow moment."</h3>
+              <div className="space-y-10">
+                <div className="flex items-start gap-6">
+                  <MapPin className="w-8 h-8 shrink-0 opacity-40" />
+                  <div>
+                    <h4 className="font-bold uppercase text-xs tracking-widest mb-2 opacity-60">Location</h4>
+                    <p className="text-xl font-serif">Hajji Musa Kasule Mall, Level 2<br />Room SF-08, Wandegeya</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-6">
+                  <Clock className="w-8 h-8 shrink-0 opacity-40" />
+                  <div>
+                    <h4 className="font-bold uppercase text-xs tracking-widest mb-2 opacity-60">Hours</h4>
+                    <p className="text-xl font-serif">Mon - Fri: 6:00 AM — 11:59 PM <br /> Sat - Sun: 8:00 AM — 11:59 AM</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="absolute -bottom-10 -right-10 w-full h-full border-2 border-mellow-burgundy/10 rounded-tr-[120px] rounded-bl-[120px] -z-0"></div>
+          </div>
+          <div>
+            <span className="uppercase text-[10px] tracking-[0.4em] font-bold text-mellow-burgundy mb-6 block">Our Essence</span>
+            <h2 className="text-7xl font-serif leading-[0.9] mb-10">Artisanal Spirits, <br />Global Standards</h2>
+            <p className="text-xl leading-relaxed text-mellow-brown/70 font-serif max-w-lg mb-8">
+              Located in the iconic Haji Musa Kasule Mall, we serve more than just food. We serve a quiet pause in your busy day, a place where connections are forged over the steam of African tea and the aroma of fresh Pilau.
+            </p>
+            <div className="p-8 bg-mellow-burgundy/5 rounded-2xl border border-mellow-burgundy/10">
+              <h4 className="font-serif italic text-2xl text-mellow-burgundy mb-2">Our Signature: The Katogo</h4>
+              <p className="text-mellow-brown/80 font-serif">A timeless Ugandan classic, expertly prepared and served with your favorite accompaniment: tender <span className="font-bold">Beef</span>, savory <span className="font-bold">Chicken</span>, or rich <span className="font-bold">G-nuts</span>.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="bg-mellow-brown text-mellow-cream py-32 px-6">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid md:grid-cols-3 gap-20">
+            <div className="space-y-6">
+              <h4 className="font-serif italic text-3xl mb-8">Reach Out</h4>
+              <div className="flex items-center gap-4">
+                <Phone className="w-5 h-5 opacity-40" />
+                <span className="text-lg">0743234431 / 0794942814</span>
+              </div>
+              <div className="flex items-center gap-4">
+                <Mail className="w-5 h-5 opacity-40" />
+                <span className="text-lg underline underline-offset-4 decoration-mellow-burgundy">cafemellows24@gmail.com</span>
+              </div>
+            </div>
+            <div className="md:col-span-2 text-right md:text-left">
+               <h2 className="text-6xl md:text-8xl font-serif tracking-tighter mb-10">Visit us in <br /> Wandegeya</h2>
+               <p className="text-xl font-serif opacity-60">Hajji Musa Kasule Mall, Level 2 room SF-08</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-16 bg-[#211711] text-[#7c6a5e] border-t border-white/5">
+        <div className="mx-auto max-w-7xl px-6 flex flex-col md:flex-row items-center justify-between gap-12">
+          <div className="flex items-center gap-4">
+             <img 
+               src="input_file_16.png" 
+               alt="Logo" 
+               className="h-8 w-auto opacity-80"
+               referrerPolicy="no-referrer"
+             />
+            <span className="font-serif font-bold text-white text-2xl tracking-tighter italic">Mellows</span>
+          </div>
+          <div className="text-center">
+            <p className="text-[10px] uppercase tracking-[0.3em] font-bold mb-2 text-white/40">Since Twenty Twenty Four</p>
+            <p className="text-sm italic font-serif">Authentic. Local. Mellow.</p>
+          </div>
+          <div className="flex gap-10 text-[10px] font-bold uppercase tracking-[0.2em]">
+            <a href="#" className="hover:text-white transition-colors flex items-center gap-2"><Instagram className="w-4 h-4" /> Instagram</a>
+            <a href="#" className="hover:text-white transition-colors flex items-center gap-2"><Facebook className="w-4 h-4" /> Facebook</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
